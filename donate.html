@@ -3,375 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Our Test Bank Project</title>
+    <title>Support ASU Bank XYZ</title>
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #1c1c1e;
-            --primary-color: #007aff;
-            --secondary-color: #f2f2f7;
-            --card-bg: #ffffff;
-            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            --font-size: 16px;
-            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        .dark-mode {
-            --bg-color: #000000;
-            --text-color: #f2f2f7;
-            --primary-color: #0a84ff;
-            --secondary-color: #1c1c1e;
-            --card-bg: #1c1c1e;
-            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
         body {
-            font-family: var(--font-family);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-size: var(--font-size);
-            transition: all 0.3s ease;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .top-nav {
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            background-color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .top-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 5px 10px;
-            border-radius: 8px;
-            transition: background-color 0.2s;
-        }
-
-        .top-nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .container {
+            padding: 15px;
+            background-color: #f0f2f5;
+            color: #333;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 0 auto;
+        }
+
+        .donation-card {
+            background-color: white;
+            border-radius: 12px;
             padding: 20px;
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            box-shadow: var(--card-shadow);
-        }
-
-        h1 {
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        p {
             margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #007aff;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid #007aff;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #007aff;
+            margin-bottom: 5px;
+            font-size: 18px;
         }
 
         .highlight {
-            background-color: rgba(10, 132, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
+            background-color: #e3f2fd;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
         }
 
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .control-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        button {
-            background-color: var(--primary-color);
+        .whatsapp-btn {
+            display: block;
+            background-color: #25D366;
             color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        button:hover {
-            background-color: var(--primary-color);
-            opacity: 0.9;
-        }
-
-        button:active {
-            transform: scale(0.97);
-        }
-
-        .home-btn {
-            display: inline-block;
             text-align: center;
-            margin-top: 30px;
+            padding: 12px;
+            border-radius: 8px;
             text-decoration: none;
-            color: var(--primary-color);
             font-weight: 500;
-            padding: 10px 15px;
-            border-radius: 8px;
-            background-color: rgba(10, 132, 255, 0.1);
-        }
-
-        .home-btn:hover {
-            background-color: rgba(10, 132, 255, 0.2);
-            text-decoration: none;
-        }
-
-        .lang-ar {
-            display: none;
-        }
-
-        .ios-segment {
-            display: inline-flex;
-            background-color: rgba(120, 120, 128, 0.12);
-            border-radius: 8.91px;
-            padding: 3px;
-            margin: 10px 0;
-        }
-
-        .ios-segment button {
-            background: none;
-            color: var(--text-color);
-            padding: 6px 12px;
-            border-radius: 6.93px;
-            font-size: 13px;
-        }
-
-        .ios-segment button.active {
-            background-color: rgba(255, 255, 255, 0.85);
-            color: #000;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark-mode .ios-segment button.active {
-            background-color: rgba(60, 60, 67, 0.36);
-            color: #fff;
-        }
-
-        .whatsapp-instructions {
-            background-color: rgba(76, 217, 100, 0.1);
-            border-left: 4px solid #4CD964;
-            padding: 15px;
-            border-radius: 8px;
             margin: 20px 0;
         }
 
-        @media (max-width: 600px) {
-            .controls {
-                flex-direction: column;
-            }
-            
-            .control-group {
-                justify-content: space-between;
-                width: 100%;
-            }
-            
-            .top-nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-                padding: 10px;
-            }
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .nav-link {
+            color: #007aff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="top-nav">
-        <a href="index.html">
-            <span class="lang-en">Home</span>
-            <span class="lang-ar">الصفحة الرئيسية</span>
-        </a>
-        <a href="confirm_device.html">
-            <span class="lang-en">Uploaded Materials</span>
-            <span class="lang-ar">المواد المرفوعة</span>
-        </a>
-        <a href="importantlinks.html">
-            <span class="lang-en">Important Links</span>
-            <span class="lang-ar">روابط مهمة</span>
-        </a>
-    </div>
+    <div class="donation-card">
+        <div class="header">
+            <div class="logo">ASU BANK XYZ</div>
+            <div class="title">Support Our Free Student Platform</div>
+        </div>
 
-    <div class="container">
-        <div class="controls">
-            <div class="ios-segment">
-                <button id="langEn" class="active">EN</button>
-                <button id="langAr">ع</button>
+        <div class="section">
+            <div class="section-title">💳 How to Donate</div>
+            <div class="highlight">
+                <p><strong>To support our free platform:</strong></p>
+                <p>1. Message us on WhatsApp at <strong>+962 7 7935 2591</strong> (DO NOT CALL)</p>
+                <p>2. Send this exact message: <em>"I want to donate to ASU Bank XYZ"</em></p>
+                <p>3. We'll reply with secure donation details</p>
             </div>
-            <div class="control-group">
-                <button id="modeToggle">
-                    <span class="lang-en">Dark Mode</span>
-                    <span class="lang-ar" style="display:none;">الوضع المظلم</span>
-                </button>
-                <button id="increaseText">A+</button>
-                <button id="decreaseText">A-</button>
+            <p>Your support helps maintain and improve this free resource for all students.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🔒 Safe Donations</div>
+            <p>We never ask for direct payments. This WhatsApp process ensures:</p>
+            <ul>
+                <li>Official donation channels only</li>
+                <li>Transparent communication</li>
+                <li>No pressure - completely optional</li>
+            </ul>
+        </div>
+
+        <a href="https://wa.me/00962779352591" class="whatsapp-btn">
+            Message Us to Donate
+        </a>
+
+        <div class="section">
+            <div class="section-title">🔗 Quick Access</div>
+            <div class="nav-links">
+                <a href="index" class="nav-link">Home</a>
+                <a href="confirm_device" class="nav-link">Materials</a>
+                <a href="importantlinks" class="nav-link">Resources</a>
             </div>
         </div>
 
-        <h1>
-            <span class="lang-en">About Our Test Bank Project</span>
-            <span class="lang-ar">حول مشروع بنك الاختبارات</span>
-        </h1>
-
-        <p class="lang-en">Dear students and visitors,</p>
-        <p class="lang-ar">أعزائي الطلاب والزوار،</p>
-
-        <div class="highlight">
-            <p class="lang-en">We are a small group of university students who created this platform to help our fellow students find the learning materials they need. All the resources you find here are completely free to use - we don't ask for any payment (zero JOD) to access them.</p>
-            <p class="lang-ar">نحن مجموعة صغيرة من طلاب الجامعة أنشأنا هذه المنصة لمساعدة زملائنا الطلاب في العثور على المواد التعليمية التي يحتاجونها. جميع الموارد التي تجدها هنا مجانية تمامًا للاستخدام - لا نطلب أي دفعة (صفر دينار) للوصول إليها.</p>
+        <div class="footer">
+            <p>ASU Bank XYZ remains completely free to use - donations help us cover costs.</p>
+            <p>Thank you for supporting student learning!</p>
         </div>
-
-        <p class="lang-en">We collect and organize materials from teachers who teach the same or similar courses at our university, making it easier for you to find what you need for your studies.</p>
-        <p class="lang-ar">نقوم بجمع وتنظيم المواد من المعلمين الذين يدرسون نفس المواد أو مواد مماثلة في جامعتنا، مما يسهل عليك العثور على ما تحتاجه لدراستك.</p>
-
-        <p class="lang-en">However, maintaining this project requires time and effort to keep it running smoothly. While browsing and downloading materials is completely free, we would greatly appreciate any donations from those who find this service helpful and can afford to contribute.</p>
-        <p class="lang-ar">ومع ذلك، فإن الحفاظ على هذا المشروع يتطلب وقتًا وجهدًا لضمان استمراره بسلاسة. بينما التصفح وتنزيل المواد مجاني تمامًا، فإننا نقدر كثيرًا أي تبرعات من أولئك الذين يجدون هذه الخدمة مفيدة ويمكنهم المساهمة.</p>
-
-        <div class="whatsapp-instructions">
-            <p class="lang-en"><strong>How to Donate:</strong> Please <strong>message us</strong> (do not call) on WhatsApp at <strong>+962 7 7935 2591</strong> with the following text: "I want to help/donate to ASU Bank XYZ project". We will then reply with our official donation details.</p>
-            <p class="lang-ar"><strong>كيفية التبرع:</strong> يرجى <strong>مراسلتنا</strong> (لا تتصل) على واتساب على الرقم <strong>+962 7 7935 2591</strong> بالنص التالي: "أريد المساعدة/التبرع لمشروع بنك ASU XYZ". سنقوم بعد ذلك بالرد عليك بتفاصيل التبرع الرسمية.</p>
-        </div>
-
-        <div class="highlight">
-            <p class="lang-en"><strong>Important:</strong> We understand that most donation requests online can be scams. We never ask anyone to send us money directly through any payment method. This is the only official page for donations.</p>
-            <p class="lang-ar"><strong>مهم:</strong> نحن ندرك أن معظم طلبات التبرعات على الإنترنت يمكن أن تكون احتيالية. نحن لا نطلب من أي شخص إرسال الأموال إلينا مباشرة عبر أي طريقة دفع. هذه هي الصفحة الرسمية الوحيدة للتبرعات.</p>
-            
-            <p class="lang-en">If you can't afford to donate, please consider sharing this page with someone who might be able to help with any amount.</p>
-            <p class="lang-ar">إذا لم تتمكن من التبرع، يرجى التفكير في مشاركة هذه الصفحة مع شخص قد يكون قادرًا على المساعدة بأي مبلغ.</p>
-        </div>
-
-        <p class="lang-en">Your support helps us keep this project optimized and running without problems, making it easier for all students to find the materials they need for their studies.</p>
-        <p class="lang-ar">دعمك يساعدنا في الحفاظ على هذا المشروع مثاليًا ويعمل بدون مشاكل، مما يسهل على جميع الطلاب العثور على المواد التي يحتاجونها لدراستهم.</p>
-
-        <p class="lang-en">Thank you for using our test bank, and we hope it helps you in your academic journey!</p>
-        <p class="lang-ar">شكرًا لاستخدامك بنك الاختبارات الخاص بنا، ونأمل أن يساعدك في رحلتك الأكاديمية!</p>
-
-        <a href="index.html" class="home-btn">
-            <span class="lang-en">← Back to Home</span>
-            <span class="lang-ar">← العودة للصفحة الرئيسية</span>
-        </a>
     </div>
-
-    <script>
-        // Prevent right click and keyboard shortcuts
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-            if (e.key === 'F12' || 
-                (e.ctrlKey && e.shiftKey && e.key === 'I') || 
-                (e.ctrlKey && e.shiftKey && e.key === 'J') || 
-                (e.ctrlKey && e.key === 'U')) {
-                e.preventDefault();
-            }
-        });
-
-        // Dark/Light mode toggle
-        const modeToggle = document.getElementById('modeToggle');
-        modeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-            updateModeText();
-        });
-
-        // Check for saved user preference
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.body.classList.add('dark-mode');
-        }
-
-        // Text size controls
-        const increaseText = document.getElementById('increaseText');
-        const decreaseText = document.getElementById('decreaseText');
-        let currentSize = localStorage.getItem('textSize') || 16;
-        document.documentElement.style.setProperty('--font-size', `${currentSize}px`);
-
-        increaseText.addEventListener('click', () => {
-            if (currentSize < 24) {
-                currentSize = parseInt(currentSize) + 2;
-                document.documentElement.style.setProperty('--font-size', `${currentSize}px`);
-                localStorage.setItem('textSize', currentSize);
-            }
-        });
-
-        decreaseText.addEventListener('click', () => {
-            if (currentSize > 12) {
-                currentSize = parseInt(currentSize) - 2;
-                document.documentElement.style.setProperty('--font-size', `${currentSize}px`);
-                localStorage.setItem('textSize', currentSize);
-            }
-        });
-
-        // Language toggle
-        const langEn = document.getElementById('langEn');
-        const langAr = document.getElementById('langAr');
-
-        langEn.addEventListener('click', () => {
-            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
-            document.querySelectorAll('.lang-ar').forEach(el => el.style.display = 'none');
-            langEn.classList.add('active');
-            langAr.classList.remove('active');
-            localStorage.setItem('language', 'en');
-            updateModeText();
-        });
-
-        langAr.addEventListener('click', () => {
-            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.lang-ar').forEach(el => el.style.display = 'block');
-            langAr.classList.add('active');
-            langEn.classList.remove('active');
-            localStorage.setItem('language', 'ar');
-            updateModeText();
-        });
-
-        // Check for saved language preference
-        if (localStorage.getItem('language') === 'ar') {
-            langAr.click();
-        } else {
-            langEn.click();
-        }
-
-        function updateModeText() {
-            const isDark = document.body.classList.contains('dark-mode');
-            const isArabic = localStorage.getItem('language') === 'ar';
-            
-            const modeTextEn = isDark ? 'Light Mode' : 'Dark Mode';
-            const modeTextAr = isDark ? 'الوضع المضيء' : 'الوضع المظلم';
-            
-            document.querySelectorAll('.lang-en').forEach(el => {
-                if (el.parentElement === modeToggle) {
-                    el.textContent = modeTextEn;
-                }
-            });
-            
-            document.querySelectorAll('.lang-ar').forEach(el => {
-                if (el.parentElement === modeToggle) {
-                    el.textContent = modeTextAr;
-                }
-            });
-        }
-
-        // Initial update
-        updateModeText();
-    </script>
 </body>
 </html>
